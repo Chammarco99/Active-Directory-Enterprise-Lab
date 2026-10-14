@@ -54,14 +54,16 @@ The primary server, **DC01**, runs Windows Server 2022 and provides centralised 
 
 A Windows client workstation, **PC01**, is included in the planned architecture for future domain integration and end-to-end validation.
 
+
 ```mermaid
 flowchart TB
-    subgraph LAB["VirtualBox Internal Network — AD-LAB"]
-        DC["DC01 — Windows Server 2022<br/>192.168.10.10/24<br/>Active Directory | DNS | DHCP<br/>Group Policy | SMB | Security Auditing"]
-        PC["PC01 — Windows Client<br/>Planned DHCP: 192.168.10.100–200<br/>Domain Join and Client Testing Pending"]
-        DC ---|"Internal Network"| PC
+    subgraph LAB["VirtualBox Internal Network - AD-LAB"]
+        DC["DC01 - Windows Server 2022<br/>192.168.10.10/24<br/>Active Directory, DNS, DHCP<br/>Group Policy, SMB, Security Auditing"]
+        PC["PC01 - Windows Client<br/>DHCP Range: 192.168.10.100-200<br/>Domain Join and Testing Pending"]
+        DC --- PC
     end
 ```
+
 
 ### Network Configuration
 
